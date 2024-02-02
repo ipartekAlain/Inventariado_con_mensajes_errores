@@ -1,0 +1,133 @@
+:root {
+  /* Colores Azul Verdoso */
+  --principal: #007F7E;
+  --principalOscuro: #005D5C;
+  --principalMuyOscuro: #004848;
+  --principalClaro: #00A5A4;
+  --principalMuyClaro: #00B8B7;
+
+  /* contraste Dorado */
+  --contraste: #FFD700;
+  --contrasteOscuro: #CCA300;
+  --contrasteClaro: #FFE066;
+  
+  /* Colores de Fondo */
+  --colorFondoOscuro: #E0F7F7;
+  --colorFondoClaro: #F5FEFE;
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    background-color:var(--colorFondoClaro);
+    
+}
+
+header{
+    background-color:var(--principal); 
+    height:120px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+	color:var(--contraste)
+	
+}
+
+main{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: calc(100vh - 120px);
+}
+
+nav{
+    width:300px;
+    background-color:var(--colorFondoOscuro);
+   	min-height: calc(100vh - 120px - 40px);
+   	padding:20px;
+}
+
+nav a{
+display: flex;
+flex-direction: row;
+    justify-content: center;
+    align-items: center;
+width:auto;
+height:50px;
+margin-bottom:20px;
+background-color:var(--principalOscuro);
+color:var(--contraste);
+font-size: 22px;
+text-decoration: none;
+}
+
+
+
+section{
+    width:100%;
+    
+}
+
+form {
+    padding: 20px;
+    
+    display: grid;
+    gap: 10px;
+    grid-template-rows: repeat(3, auto);
+    width:fit-content;
+  }
+
+label{
+  
+    width: 120px;
+    display: inline-block;
+}
+
+select, input[type="text"]{
+    
+    width:300px;
+    display: inline-block;
+}
+input[type="submit"]{
+    background-color:var(--principal);
+   width:120px;
+   color: var(--contraste);
+}
+
+/**/
+
+table {
+    border-collapse: collapse;
+    margin:10px;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color:var(--colorFondoClaro);
+}
+
+tr:nth-child(odd) {
+    background-color:var(--colorFondoOscuro);
+}
+
+thead tr:nth-child(odd) {
+    background-color:var(--principalMuyClaro);
+    border-bottom: 1px solid black;
+    color: var(--contraste);
+}
+

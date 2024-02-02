@@ -1,0 +1,14 @@
+<div th:fragment="cabecera">
+	<header>
+
+		<h1>Inventario</h1>
+	</header>
+</div>
+
+<div th:fragment="menu">
+	<div class="mensaje"> <p th:text="${session.mensaje}"></p></div>
+	<nav>
+		<a th:href="@{/menu_inventario}">Inventario</a>
+		<a th:href="@{/menu_detalles}">Detalles</a>
+	</nav>
+</div>

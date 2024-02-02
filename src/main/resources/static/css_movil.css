@@ -1,0 +1,133 @@
+:root {
+  
+
+    --colorPrincipal: #BC4749;
+    --colorPrincipalClaro: #eda1a2;
+    --colorPrincipalOscuro: #83282a;
+
+    --colorContraste: #6A994E;
+    --colorContrasteOscuro: #386641;
+    --colorContrasteClaro: #A7C957;
+
+    --fondoClaro: #f6f0f0;
+    --fondoOscuro: #cccbcb;
+
+    --fuenteSerif:"Garamond";
+    --fuenteSans:"Helvetica";
+
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background-color:var(--fondoClaro);
+}
+
+h1{
+	color: var(--colorPrincipalClaro);
+	margin:5px;
+}
+
+header {
+    background-color:var(--colorPrincipal);
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    min-height: calc(100vh - 120px);
+}
+
+main div{
+	background-color:var(--fondoOscuro);
+	  width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:var(--fondoOscuro);
+    width: 100%;
+
+}
+
+nav a {
+    display: flex;
+    height: 40px;
+    width:50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+label {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+select,
+input[type="text"] {
+    font-size: 22px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    font-size: 22px;
+}
+
+/**/
+
+.oculta {
+    display: none;
+}
+
+table {
+    font-size: 22px;
+    border-collapse: collapse;
+    margin:10px;
+}
+
+th,
+td {
+    padding: 5px;
+}
+
+tr:nth-child(even) {
+    background-color:var(--fondoClaro);
+}
+
+tr:nth-child(odd) {
+    background-color:var(--fondoOscuro);
+}
+
+thead tr:nth-child(odd) {
+    background-color:var(--colorContraste);
+    border-bottom: 1px solid black;
+}

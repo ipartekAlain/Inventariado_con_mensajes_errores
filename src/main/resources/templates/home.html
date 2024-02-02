@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inventariado</title>
+	<!--
+    <link rel="stylesheet" href="css_movil.css"  media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="css_ordenador.css" media="screen and (min-width:801px)"  >
+-->
+
+	<link rel="stylesheet" th:href="@{/css_movil.css}" media="screen and (orientation: portrait)">
+	<link rel="stylesheet" th:href="@{/css_ordenador.css}" media="screen and (orientation: landscape)">
+
+</head>
+
+<body>
+
+
+
+
+	<div th:include="plantilla.html::cabecera"></div>
+
+
+	<main>
+		<div th:include="plantilla.html::menu"></div>
+
+		<section>
+			<form th:action="@{/actualizar_cantidad}" method="post" th:object="${objeto_entidad}">
+
+				<label for="nombre">Producto</label>
+				<select name="nombre" id="nombre" th:field="*{productoInventario.id}">
+
+					<option th:each="elem : ${atr_lista_productos}" th:value="${elem.id}" th:text="${elem.nombre}">
+					</option>
+
+				</select>
+
+				<label for="cantidad">Cantidad</label>
+				<input type="text" name="cantidad" id="cantidad" th:field="*{cantidad}" >
+
+				<input type="submit" value="Enviar">
+			</form>
+		</section>
+
+	</main>
+
+
+</body>
+
+</html>

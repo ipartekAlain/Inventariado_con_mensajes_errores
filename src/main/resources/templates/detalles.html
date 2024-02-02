@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventariado</title>
+<!--
+    <link rel="stylesheet" href="css_movil.css"  media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="css_ordenador.css" media="screen and (min-width:801px)"  >
+-->
+
+    <link rel="stylesheet" th:href="@{/css_movil.css}"  media="screen and (orientation: portrait)">
+    <link rel="stylesheet" th:href="@{/css_ordenador.css}" media="screen and (orientation: landscape)"  >
+
+</head>
+<body>
+    
+
+	
+    <div th:include="plantilla.html::cabecera"></div>
+
+
+     <main>
+         <div th:include="plantilla.html::menu"></div>
+
+         <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="oculta">ID</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th class="oculta">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="elem : ${atr_lista_productos}">
+                        <td class="oculta" th:text="${elem.id}"></td>
+                        <td th:text="${elem.productoInventario.nombre}"></td>
+                        <td th:text="${elem.cantidad}"></td>
+                        <td class="oculta">
+
+                          <a th:href="@{'/detalles_borrar/' + ${elem.id}}">Borrar</a>
+
+                            <a th:href="@{/detalles_modificar}">Modificar</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+
+         </section>
+
+     </main>
+
+
+</body>
+</html>
